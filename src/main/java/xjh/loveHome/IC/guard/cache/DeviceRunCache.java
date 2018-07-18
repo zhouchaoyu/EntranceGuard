@@ -9,7 +9,7 @@ import com.jfinal.plugin.redis.Redis;
 public class DeviceRunCache extends CacheName {
 	
 	public static final DeviceRunCache CACHE=new DeviceRunCache();
-	public void DeviceNOCache() {
+	public DeviceRunCache() {
 		setCacheName("deviceRunNO");
 	}
 	/***

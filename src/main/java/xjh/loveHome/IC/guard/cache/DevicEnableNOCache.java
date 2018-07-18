@@ -6,7 +6,7 @@ import com.jfinal.plugin.redis.Redis;
  *	可运行设备编号缓存* 
  * ****/
 public class DevicEnableNOCache extends CacheName {
-	public void DeviceNOCache() {
+	public DevicEnableNOCache() {
 		setCacheName("devicEnableNO");
 	}
 	

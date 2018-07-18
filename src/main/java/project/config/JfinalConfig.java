@@ -16,12 +16,12 @@ import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.plugin.redis.RedisPlugin;
 import com.jfinal.template.Engine;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.java.Log;
 import xjh.loveHome.IC.guard.cache.CacheLoader;
 import xjh.loveHome.IC.guard.route.GuardRoute;
 import xjh.loveHome.IC.mode._MappingKit;
 
-@Slf4j
+@Log
 public class JfinalConfig extends JFinalConfig {
 	public static Map<String, DruidPlugin> createC3p0PluginList() throws Exception {
 
@@ -86,11 +86,13 @@ public class JfinalConfig extends JFinalConfig {
 		CacheLoader loader=CacheLoader.CACHE_LOADER;
 		loader.initLoad(null);
 		log.info("Jfnal 启动成功");
+		System.out.println("Jfnal 启动成功");
 	}
 
 	@Override
 	public void beforeJFinalStop() {
 		super.beforeJFinalStop();
+		
 		log.info("Jfnal 已关闭");
 	}
 
