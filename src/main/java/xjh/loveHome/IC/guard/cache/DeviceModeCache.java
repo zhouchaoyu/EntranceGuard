@@ -2,6 +2,7 @@ package xjh.loveHome.IC.guard.cache;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -133,5 +134,28 @@ public class DeviceModeCache extends CacheName {
 		Cache cache = Redis.use();
 		return cache.hgetAll(getCacheName());
 	}
-
+	
+	/****
+	 *从数据库刷新缓存
+	 * ***/
+	public static void RefreshCache() {
+		Cache cache = Redis.use();
+		cache.del(CACHE.getCacheName());
+		List<GuardDevice> devices=GuardDevice.dao.getDeviceALL();
+		Map<Object, Object> map=new HashMap<>();
+		for (Iterator<GuardDevice> iterator = devices.iterator(); iterator.hasNext();) {
+						GuardDevice		guardDevice=iterator.next();
+						map.put(guardDevice.getNo(),guardDevice);
+		}
+		cache.hmset(CACHE.getCacheName(),map);	
+	}
+	
+	
+	public void RemoveCache(String no) {
+		Cache cache = Redis.use();
+		cache.hdel(getCacheName(),no);
+	}
+	
+	
+	
 }

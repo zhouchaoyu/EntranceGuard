@@ -17,9 +17,7 @@ import com.jfinal.plugin.redis.RedisPlugin;
 import com.jfinal.template.Engine;
 
 import lombok.extern.slf4j.Slf4j;
-import project.index.IndexController;
-import xjh.loveHome.IC.guard.GuardController;
-import xjh.loveHome.IC.guard.QrCodeController;
+import xjh.loveHome.IC.guard.cache.CacheLoader;
 import xjh.loveHome.IC.guard.route.GuardRoute;
 import xjh.loveHome.IC.mode._MappingKit;
 
@@ -54,7 +52,7 @@ public class JfinalConfig extends JFinalConfig {
 	public void configPlugin(Plugins me) {
 		try {
 			Map<String, DruidPlugin> druidPlugins = createC3p0PluginList();
-			for (Iterator iterator = druidPlugins.keySet().iterator(); iterator.hasNext();) {
+			for (Iterator<String> iterator = druidPlugins.keySet().iterator(); iterator.hasNext();) {
 				String druidPluginName = (String) iterator.next();
 				me.add(druidPlugins.get(druidPluginName));
 				// 配置ActiveRecord插件
@@ -85,6 +83,8 @@ public class JfinalConfig extends JFinalConfig {
 	public void afterJFinalStart() {
 		// TODO Auto-generated method stub
 		super.afterJFinalStart();
+		CacheLoader loader=CacheLoader.CACHE_LOADER;
+		loader.initLoad(null);
 		log.info("Jfnal 启动成功");
 	}
 

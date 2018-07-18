@@ -1,5 +1,8 @@
 package xjh.loveHome.IC.mode;
 
+import java.util.List;
+
+import xjh.loveHome.IC.guard.cache.DeviceModeCache;
 import xjh.loveHome.IC.mode.base.BaseGuardDevice;
 
 /**
@@ -32,5 +35,40 @@ public class GuardDevice extends BaseGuardDevice<GuardDevice> {
 		String sql="select * from guard_device where no=?";
 		return findFirst(sql, no);
 	}
+	
+	
+	/***
+	 * 获取所有设备mode
+	 * **/
+	public List<GuardDevice> getDeviceALL() {
+		String sql="select * from guard_device";
+		return find(sql);
+	}
+	
+	
+	/***
+	 * 重写update与save方法，将写数据同步到cache中
+	 * ***/
+	@Override
+	public boolean update() {
+		if (super.update()) {
+			DeviceModeCache.CACHE.addDeviceMode(this);
+			return true;
+		}
+		return false;
+	}
+	
+	/***
+	 * 重写update与save方法，将写数据同步到cache中
+	 * ***/
+	@Override
+	public boolean save() {
+		if (super.save()) {
+			DeviceModeCache.CACHE.addDeviceMode(this);
+			return true;
+		}
+		return false;
+	}
+	
 	
 }

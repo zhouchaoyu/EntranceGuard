@@ -3,11 +3,12 @@ package xjh.loveHome.IC.guard.cache;
 import com.jfinal.plugin.redis.Cache;
 import com.jfinal.plugin.redis.Redis;
 /****
- * 正在运行的设备缓存,采用hastset数据模型 filed 为 GuardDevice no属性值 velue 为  time 访问周期间隔参数
+ * 正在运行的设备缓存,
+ * 采用hastset数据模型 filed 为 GuardDevice no属性值 velue 为  time 访问时间戳
  * ***/
-public class DeviceRunNoCache extends CacheName {
+public class DeviceRunCache extends CacheName {
 	
-	public static final DeviceRunNoCache CACHE=new DeviceRunNoCache();
+	public static final DeviceRunCache CACHE=new DeviceRunCache();
 	public void DeviceNOCache() {
 		setCacheName("deviceRunNO");
 	}
@@ -52,6 +53,13 @@ public class DeviceRunNoCache extends CacheName {
 			return true;
 		}
 		return false;
+	}
+	/***
+	 * 移除缓存
+	 * ***/
+	public void RemoveCache(String no) {
+		Cache cache=Redis.use();
+		cache.del(getCacheName(),no);
 	}
 	
 	
