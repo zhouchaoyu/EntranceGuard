@@ -7,7 +7,8 @@ public enum WebGuardResponseCode {
 	Exception,//系统异常
 	Nologin,//未登录
 	NoFocus,//未关注
-	NoAuthent;//未认证
+	NoAuthent,//未认证
+	RequsetError;//请求错误
 	
 	public int getCode() {
 		if (this==WebGuardResponseCode.OpenSuccess) {
@@ -31,8 +32,15 @@ public enum WebGuardResponseCode {
 		if (this==NoAuthent) {
 			return 1117;
 		}
+		if (this==RequsetError) {
+			return 1118;
+		}
+		
 		return 0;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return 	String.valueOf(getCode());
+	}
 }

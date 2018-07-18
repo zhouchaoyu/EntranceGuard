@@ -6,11 +6,12 @@ import java.io.OutputStream;
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
 
+import xjh.loveHome.IC.guard.service.DeviceResponseCode;
 import xjh.loveHome.IC.uitils.QrCodeCreateUtil;
 
 public class QrCodeController extends Controller {
 	public void index() {
-		renderText("requset error");
+		renderText(DeviceResponseCode.RequsetError.toString());
 	}
 
 	@Before(RemoteDeviceInfoIntercept.class)
@@ -20,11 +21,11 @@ public class QrCodeController extends Controller {
 		try {
 			String token = getPara("token");
 			if (token == null || token.equals("")) {
-				message = "requset parameter error";
+				message = DeviceResponseCode.ParaError.toString();
 			} else {
 				// 获取响应流并开始创建二维码
 				outputStream = getResponse().getOutputStream();
-				QrCodeCreateUtil.createQrCode(outputStream,"http://192.168.0.133:8080/EntranceGuard/qrCode/takeQR?token=112", 50, "JPEG");
+				QrCodeCreateUtil.createQrCode(outputStream,"http://192.168.0.118:8080/EntranceGuard//guard/toHTML?token="+token, 50, "JPEG");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

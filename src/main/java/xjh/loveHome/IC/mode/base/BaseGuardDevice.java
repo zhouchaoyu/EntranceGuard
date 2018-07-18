@@ -65,4 +65,12 @@ public abstract class BaseGuardDevice<M extends BaseGuardDevice<M>> extends Mode
 		return getLong("part");
 	}
 
+	public void setCommunication(java.lang.Integer communication) {
+		set("communication", communication);
+	}
+	
+	public java.lang.Integer getCommunication() {
+		return getInt("communication");
+	}
+
 }

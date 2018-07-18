@@ -1,0 +1,18 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title></title>
+</head>
+<body>
+	<h1>我是开门界面</h1>	
+	<#if token??>
+		<h2>开门指令：  ${token!}  <h2> 
+	
+	</#if>
+	<form id="from_register" method="post" action="../EntranceGuard/door/openDoor" >
+		用户标识	：<input    name="user"  />
+		开门指令      ： <input    name="user"  value="${token!}" />
+				<button   type="submit"></button>
+	</form>
+</body>
+</html>

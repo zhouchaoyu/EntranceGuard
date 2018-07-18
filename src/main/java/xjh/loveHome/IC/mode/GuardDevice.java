@@ -1,6 +1,5 @@
 package xjh.loveHome.IC.mode;
 
-import xjh.loveHome.IC.guard.service.DeviceStateCode;
 import xjh.loveHome.IC.mode.base.BaseGuardDevice;
 
 /**
@@ -20,11 +19,15 @@ public class GuardDevice extends BaseGuardDevice<GuardDevice> {
 	}
 	
 	
-	public Integer getState(String no) {
-		getDeviceByNo(no);
+	public Integer getState(String no) throws Exception {
+		if (getDeviceByNo(no)==null) {
+			throw new Exception("this GuardDevice is null");
+		}
 		return null;
 	}
-	
+	/***
+	 * 用设备编号获取设备mode
+	 * **/
 	public GuardDevice getDeviceByNo(String no) {
 		String sql="select * from guard_device where no=?";
 		return findFirst(sql, no);

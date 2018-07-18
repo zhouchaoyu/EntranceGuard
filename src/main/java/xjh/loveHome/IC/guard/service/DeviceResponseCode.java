@@ -37,7 +37,10 @@ public enum DeviceResponseCode {
 	}
 	
 	
-	
+	@Override
+	public String toString() {
+		return String.valueOf(this.getCode());
+	}
 	
 	
 }

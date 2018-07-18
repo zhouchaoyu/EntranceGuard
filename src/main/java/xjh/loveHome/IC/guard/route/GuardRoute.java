@@ -16,7 +16,7 @@ public class GuardRoute extends Routes {
 		add("/", IndexController.class);
 		add("/guard", GuardController.class);
 		add("/qrCode",QrCodeController.class);
-		add("/door",WebController.class);
+		add("/door",WebController.class,"/WEB-INF/guard/");
 		add("/plot",PlotController.class);
 		add("/device",DeviceController.class);
 	}
