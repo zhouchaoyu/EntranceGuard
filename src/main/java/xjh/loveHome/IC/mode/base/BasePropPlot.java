@@ -9,12 +9,12 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings("serial")
 public abstract class BasePropPlot<M extends BasePropPlot<M>> extends Model<M> implements IBean {
 
-	public void setId(java.lang.Integer id) {
+	public void setId(java.lang.Long id) {
 		set("id", id);
 	}
 	
-	public java.lang.Integer getId() {
-		return getInt("id");
+	public java.lang.Long getId() {
+		return getLong("id");
 	}
 
 	public void setName(java.lang.String name) {
@@ -25,36 +25,28 @@ public abstract class BasePropPlot<M extends BasePropPlot<M>> extends Model<M> i
 		return getStr("name");
 	}
 
-	public void setCompleteDate(java.util.Date completeDate) {
-		set("complete_date", completeDate);
+	public void setProvince(java.lang.String province) {
+		set("province", province);
 	}
 	
-	public java.util.Date getCompleteDate() {
-		return get("complete_date");
+	public java.lang.String getProvince() {
+		return getStr("province");
 	}
 
-	public void setProvinceId(java.lang.Integer provinceId) {
-		set("province_id", provinceId);
+	public void setRegion(java.lang.String region) {
+		set("region", region);
 	}
 	
-	public java.lang.Integer getProvinceId() {
-		return getInt("province_id");
+	public java.lang.String getRegion() {
+		return getStr("region");
 	}
 
-	public void setRegionId(java.lang.Integer regionId) {
-		set("region_id", regionId);
+	public void setCounty(java.lang.String county) {
+		set("county", county);
 	}
 	
-	public java.lang.Integer getRegionId() {
-		return getInt("region_id");
-	}
-
-	public void setCountyId(java.lang.Integer countyId) {
-		set("county_id", countyId);
-	}
-	
-	public java.lang.Integer getCountyId() {
-		return getInt("county_id");
+	public java.lang.String getCounty() {
+		return getStr("county");
 	}
 
 	public void setAddress(java.lang.String address) {
@@ -65,28 +57,12 @@ public abstract class BasePropPlot<M extends BasePropPlot<M>> extends Model<M> i
 		return getStr("address");
 	}
 
-	public void setIsDelete(java.lang.Integer isDelete) {
+	public void setIsDelete(java.lang.Boolean isDelete) {
 		set("is_delete", isDelete);
 	}
 	
-	public java.lang.Integer getIsDelete() {
-		return getInt("is_delete");
-	}
-
-	public void setCreateBy(java.lang.String createBy) {
-		set("create_by", createBy);
-	}
-	
-	public java.lang.String getCreateBy() {
-		return getStr("create_by");
-	}
-
-	public void setModifyBy(java.lang.String modifyBy) {
-		set("modify_by", modifyBy);
-	}
-	
-	public java.lang.String getModifyBy() {
-		return getStr("modify_by");
+	public java.lang.Boolean getIsDelete() {
+		return get("is_delete");
 	}
 
 	public void setCreateTime(java.util.Date createTime) {
@@ -97,36 +73,20 @@ public abstract class BasePropPlot<M extends BasePropPlot<M>> extends Model<M> i
 		return get("create_time");
 	}
 
-	public void setModifyTime(java.util.Date modifyTime) {
-		set("modify_time", modifyTime);
+	public void setDescribe(java.lang.String describe) {
+		set("describe", describe);
 	}
 	
-	public java.util.Date getModifyTime() {
-		return get("modify_time");
+	public java.lang.String getDescribe() {
+		return getStr("describe");
 	}
 
-	public void setContent(java.lang.String content) {
-		set("content", content);
+	public void setImgSource(java.lang.String imgSource) {
+		set("img_source", imgSource);
 	}
 	
-	public java.lang.String getContent() {
-		return getStr("content");
-	}
-
-	public void setImgPath(java.lang.String imgPath) {
-		set("img_path", imgPath);
-	}
-	
-	public java.lang.String getImgPath() {
-		return getStr("img_path");
-	}
-
-	public void setAlias(java.lang.String alias) {
-		set("alias", alias);
-	}
-	
-	public java.lang.String getAlias() {
-		return getStr("alias");
+	public java.lang.String getImgSource() {
+		return getStr("img_source");
 	}
 
 	public void setLongitude(java.math.BigDecimal Longitude) {

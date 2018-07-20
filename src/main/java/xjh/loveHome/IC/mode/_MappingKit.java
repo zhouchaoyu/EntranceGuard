@@ -16,16 +16,11 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 public class _MappingKit {
 	
 	public static void mapping(ActiveRecordPlugin arp) {
-		arp.addMapping("cust", "id", Cust.class);
 		arp.addMapping("guard_device", "id", GuardDevice.class);
+		arp.addMapping("ic_card", "id", IcCard.class);
 		arp.addMapping("plot_device", "id", PlotDevice.class);
+		arp.addMapping("plot_user", "id", PlotUser.class);
 		arp.addMapping("prop_plot", "id", PropPlot.class);
-		arp.addMapping("sys_code", "id", SysCode.class);
-		arp.addMapping("sys_exception_log", "id", SysExceptionLog.class);
-		arp.addMapping("sys_pact", "id", SysPact.class);
-		arp.addMapping("sys_res", "id", SysRes.class);
-		arp.addMapping("xjh_advertising", "id", XjhAdvertising.class);
-		arp.addMapping("xjh_footprint", "id", XjhFootprint.class);
 	}
 }
 

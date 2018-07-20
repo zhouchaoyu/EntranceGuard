@@ -1,4 +1,4 @@
-package xjh.loveHome.IC.guard.service;
+package xjh.loveHome.IC.guard;
 /***
  * 
  * 设备响应码：  用于回复硬件设备的响应码

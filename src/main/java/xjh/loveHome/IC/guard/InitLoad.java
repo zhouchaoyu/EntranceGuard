@@ -1,4 +1,4 @@
-package xjh.loveHome.IC.guard.cache;
+package xjh.loveHome.IC.guard;
 /**
  * 初始化数据加载接口
  * ***/

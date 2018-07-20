@@ -65,6 +65,14 @@ public abstract class BaseGuardDevice<M extends BaseGuardDevice<M>> extends Mode
 		return getLong("part");
 	}
 
+	public void setPixels(java.lang.Long pixels) {
+		set("pixels", pixels);
+	}
+	
+	public java.lang.Long getPixels() {
+		return getLong("pixels");
+	}
+
 	public void setCommunication(java.lang.Integer communication) {
 		set("communication", communication);
 	}

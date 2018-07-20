@@ -2,6 +2,8 @@ package xjh.loveHome.IC.guard.service;
 
 import javax.servlet.http.HttpServletRequest;
 
+import xjh.loveHome.IC.guard.DeviceResponseCode;
+import xjh.loveHome.IC.guard.DeviceStateCode;
 import xjh.loveHome.IC.guard.cache.DeviceModeCache;
 import xjh.loveHome.IC.guard.cache.DeviceRunCache;
 import xjh.loveHome.IC.guard.cache.OpenDoorCahce;
@@ -75,6 +77,7 @@ public class DeviceService {
 	 * 数据装配
 	 ***/
 	private GuardDevice guardDeviceDataload(String token, HttpServletRequest request) {
+		//TODO   需要重新装载数据
 		GuardDevice device = new GuardDevice();
 		device.setNo(token);
 		device.setIp(request.getRemoteAddr());

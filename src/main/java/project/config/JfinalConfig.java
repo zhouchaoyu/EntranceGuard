@@ -17,7 +17,7 @@ import com.jfinal.plugin.redis.RedisPlugin;
 import com.jfinal.template.Engine;
 
 import lombok.extern.java.Log;
-import xjh.loveHome.IC.guard.cache.CacheLoader;
+import xjh.loveHome.IC.guard.CacheLoader;
 import xjh.loveHome.IC.guard.route.GuardRoute;
 import xjh.loveHome.IC.mode._MappingKit;
 
@@ -58,6 +58,7 @@ public class JfinalConfig extends JFinalConfig {
 				// 配置ActiveRecord插件
 				ActiveRecordPlugin arp = new ActiveRecordPlugin(druidPluginName,
 						druidPlugins.get(druidPluginName));
+				arp.setShowSql(true); 
 				me.add(arp);
 				_MappingKit.mapping(arp);
 			}
@@ -86,7 +87,6 @@ public class JfinalConfig extends JFinalConfig {
 		CacheLoader loader=CacheLoader.CACHE_LOADER;
 		loader.initLoad(null);
 		log.info("Jfnal 启动成功");
-		System.out.println("Jfnal 启动成功");
 	}
 
 	@Override

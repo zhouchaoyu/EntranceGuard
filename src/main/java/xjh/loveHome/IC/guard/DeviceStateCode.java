@@ -1,4 +1,4 @@
-package xjh.loveHome.IC.guard.service;
+package xjh.loveHome.IC.guard;
 
 /***
  *@author xiaoyu

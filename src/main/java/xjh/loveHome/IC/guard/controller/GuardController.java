@@ -1,9 +1,10 @@
-package xjh.loveHome.IC.guard;
+package xjh.loveHome.IC.guard.controller;
 
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
 
-import xjh.loveHome.IC.guard.service.DeviceResponseCode;
+import xjh.loveHome.IC.guard.DeviceResponseCode;
+import xjh.loveHome.IC.guard.RemoteDeviceInfoIntercept;
 import xjh.loveHome.IC.guard.service.DeviceService;
 /***
  *门卫控制器： 此控制器door负责门的开放与闭合
@@ -41,13 +42,6 @@ public class GuardController extends Controller {
 	}
 	
 	
-	/***
-	 * 
-	 * 查询设备
-	 * ***/
-	public void query() {
-		
-	}
 	
 	
 	

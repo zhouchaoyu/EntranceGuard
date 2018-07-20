@@ -2,7 +2,7 @@ package project.index;
 
 import com.jfinal.core.Controller;
 
-import xjh.loveHome.IC.guard.service.WebGuardResponseCode;
+import xjh.loveHome.IC.uitils.WebGuardResponseCode;
 
 public class IndexController extends Controller {
 	public void index() {

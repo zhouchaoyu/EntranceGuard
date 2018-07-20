@@ -1,4 +1,4 @@
-package xjh.loveHome.IC.guard;
+package xjh.loveHome.IC.guard.controller;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -6,7 +6,8 @@ import java.io.OutputStream;
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
 
-import xjh.loveHome.IC.guard.service.DeviceResponseCode;
+import xjh.loveHome.IC.guard.DeviceResponseCode;
+import xjh.loveHome.IC.guard.RemoteDeviceInfoIntercept;
 import xjh.loveHome.IC.uitils.QrCodeCreateUtil;
 
 public class QrCodeController extends Controller {

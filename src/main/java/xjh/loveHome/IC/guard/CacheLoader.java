@@ -1,5 +1,6 @@
-package xjh.loveHome.IC.guard.cache;
+package xjh.loveHome.IC.guard;
 
+import xjh.loveHome.IC.guard.cache.DeviceCacheManager;
 import xjh.loveHome.IC.mode.GuardDevice;
 
 /***
